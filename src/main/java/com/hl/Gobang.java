@@ -14,7 +14,7 @@ public class Gobang extends JFrame {
 //        this.setResizable(false);
 
         JMenuBar jMenuBar = new JMenuBar();
-        JMenu jMenu1 = new JMenu("选项",);
+        JMenu jMenu1 = new JMenu("选项");
         JMenuItem jMenuItem1_1 = new JMenuItem("重新开始");
         JMenuItem jMenuItem1_2 = new JMenuItem("排行榜");
         JMenuItem jMenuItem1_3 = new JMenuItem("退出游戏");
