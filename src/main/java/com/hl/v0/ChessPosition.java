@@ -1,4 +1,4 @@
-package com.hl;
+package com.hl.v0;
 
 //新建一个棋子类ChessPosition保存每一步棋子所在的位置
 public class ChessPosition {

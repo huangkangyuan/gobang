@@ -1,4 +1,4 @@
-package com.hl;//构建五子棋界面GoBangframe类
+package com.hl.v0;//构建五子棋界面GoBangframe类
 
 import javax.swing.*;
 import java.awt.*;

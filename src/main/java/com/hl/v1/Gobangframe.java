@@ -1,24 +1,13 @@
 package com.hl.v1;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import java.awt.Dimension;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
+
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 //构建五子棋界面GoBangframe类
-public class GoBangframe extends JPanel implements GoBangconfig {
+public class Gobangframe extends JPanel implements Gobangconfig {
     public Graphics g;//定义一支画笔
     public int[][] isAvail = new int[column][row];//定义一个二维数组来储存棋盘的落子情况
     public ArrayList<ChessPosition> ChessPositonList = new ArrayList<ChessPosition>();//保存每一步的落子情况
@@ -28,7 +17,6 @@ public class GoBangframe extends JPanel implements GoBangconfig {
     public static HashMap<String, Integer> map = new HashMap<String, Integer>();//设置不同落子情况和相应权值的数组
 
     static {
-
         //被堵住
         map.put("01", 25);//眠1连
         map.put("02", 22);//眠1连
@@ -107,7 +95,7 @@ public class GoBangframe extends JPanel implements GoBangconfig {
 
     //主函数入口
     public static void main(String args[]) {
-        GoBangframe gf = new GoBangframe();//初始化一个五子棋界面的对象
+        Gobangframe gf = new Gobangframe();//初始化一个五子棋界面的对象
         gf.initUI();//调用方法进行界面的初始化
     }
 
@@ -167,7 +155,7 @@ public class GoBangframe extends JPanel implements GoBangconfig {
         //对可选框添加事件监听机制
         box.addActionListener(butListen);
 
-        frameListener fl = new frameListener();
+        FrameListener fl = new FrameListener();
         fl.setGraphics(this);//获取画笔对象
         this.addMouseListener(fl);
 
@@ -196,7 +184,7 @@ public class GoBangframe extends JPanel implements GoBangconfig {
                 } else if (isAvail[i][j] == 2) {
                     int countx = size * j + 20;
                     int county = size * i + 20;
-                    g.drawImage(whitechess, countx - size / 2, county - size / 2, size, size, null);
+                    g.drawImage(whi_techess, countx - size / 2, county - size / 2, size, size, null);
                 }
             }
         }

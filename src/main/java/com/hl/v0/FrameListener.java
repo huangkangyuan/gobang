@@ -1,8 +1,6 @@
-package com.hl;
+package com.hl.v0;
 
-import com.hl.ChessPosition;
 import com.hl.Gobangconfig;
-import com.hl.Gobangframe;
 
 import java.awt.*;
 import java.awt.event.MouseListener;

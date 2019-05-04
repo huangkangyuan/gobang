@@ -1,10 +1,6 @@
-package com.hl;
+package com.hl.v0;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.TextField;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
