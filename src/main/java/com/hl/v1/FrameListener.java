@@ -1,6 +1,5 @@
 package com.hl.v1;
 
-
 import java.awt.*;
 import java.awt.event.MouseListener;
 
@@ -72,7 +71,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count1 = 0;
                             if (count1 == 5) {
                                 System.out.println("黑方赢");
-                                gf.PopUp("黑方赢","");
+                                gf.PopUp("黑方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -88,7 +87,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count2 = 0;
                             if (count2 == 5) {
                                 System.out.println("黑方赢");
-                                gf.PopUp("黑方赢","");
+                                gf.PopUp("黑方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -105,7 +104,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count3 = 0;
                                 if (count3 == 5) {
                                     System.out.println("黑方赢");
-                                    gf.PopUp("黑方赢","");
+                                    gf.PopUp("黑方赢");
                                     gf.turn = 0;
                                     return;
                                 }
@@ -120,7 +119,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count4 = 0;
                                 if (count4 == 5) {
                                     System.out.println("黑方赢");
-                                    gf.PopUp("黑方赢","");
+                                    gf.PopUp("黑方赢");
                                     gf.turn = 0;
                                     return;
                                 }
@@ -147,7 +146,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count1 = 0;
                             if (count1 == 5) {
                                 System.out.println("白方赢");
-                                gf.PopUp("白方赢","");
+                                gf.PopUp("白方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -164,7 +163,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count2 = 0;
                             if (count2 == 5) {
                                 System.out.println("白方赢");
-                                gf.PopUp("白方赢","");
+                                gf.PopUp("白方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -180,7 +179,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count3 = 0;
                                 if (count3 == 5) {
                                     System.out.println("白方赢");
-                                    gf.PopUp("白方赢","");
+                                    gf.PopUp("白方赢");
                                     gf.turn = 0;
                                     return;
                                 }
@@ -194,7 +193,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count4 = 0;
                                 if (count4 == 5) {
                                     System.out.println("白方赢");
-                                    gf.PopUp("白方赢","");
+                                    gf.PopUp("白方赢");
                                     gf.turn = 0;
                                     return;
                                 }
@@ -230,7 +229,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count1 = 0;
                             if (count1 == 5) {
                                 System.out.println("黑方赢");
-                                gf.PopUp("黑方赢","");
+                                gf.PopUp("黑方赢");
                                 return;
                             }
                         }
@@ -245,7 +244,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count2 = 0;
                             if (count2 == 5) {
                                 System.out.println("黑方赢");
-                                gf.PopUp("黑方赢","");
+                                gf.PopUp("黑方赢");
                                 return;
                             }
                             //如果出现了其他棋子，或者是没有棋子时，就重新开始计数
@@ -261,7 +260,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count3 = 0;
                                 if (count3 == 5) {
                                     System.out.println("黑方赢");
-                                    gf.PopUp("黑方赢","");
+                                    gf.PopUp("黑方赢");
                                     return;
                                 }
                             }
@@ -275,7 +274,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count4 = 0;
                                 if (count4 == 5) {
                                     System.out.println("黑方赢");
-                                    gf.PopUp("黑方赢","");
+                                    gf.PopUp("黑方赢");
                                     return;
                                 }
                             }
@@ -437,7 +436,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count1 = 0;
                             if (count1 == 5) {
                                 System.out.println("白方赢");
-                                gf.PopUp("白方赢","");
+                                gf.PopUp("白方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -454,7 +453,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                             else count2 = 0;
                             if (count2 == 5) {
                                 System.out.println("白方赢");
-                                gf.PopUp("白方赢","");
+                                gf.PopUp("白方赢");
                                 gf.turn = 0;
                                 return;
                             }
@@ -470,7 +469,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count3 = 0;
                                 if (count3 == 5) {
                                     System.out.println("白方赢");
-                                    gf.PopUp("白方赢","");
+                                    gf.PopUp("白方赢");
                                     gf.turn = 0;
                                     return;
                                 }
@@ -484,7 +483,7 @@ public class FrameListener implements Gobangconfig, MouseListener {
                                 else count4 = 0;
                                 if (count4 == 5) {
                                     System.out.println("白方赢");
-                                    gf.PopUp("白方赢","");
+                                    gf.PopUp("白方赢");
                                     gf.turn = 0;
                                     return;
                                 }

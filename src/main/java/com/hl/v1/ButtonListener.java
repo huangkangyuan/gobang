@@ -1,10 +1,10 @@
-package com.hl.v1;//设置按钮监听方法ButttonLitener类
-
+package com.hl.v1;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//设置按钮监听方法ButttonLitener类
 //实现对JPanel的监听接口处理
 public class ButtonListener implements Gobangconfig, ActionListener {
     public Gobangframe gf;
@@ -63,5 +63,4 @@ public class ButtonListener implements Gobangconfig, ActionListener {
             gf.turn = 0;
         }
     }
-
 }

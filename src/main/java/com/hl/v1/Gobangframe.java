@@ -1,6 +1,5 @@
 package com.hl.v1;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -11,33 +10,34 @@ public class Gobangframe extends JPanel implements Gobangconfig {
     public Graphics g;//定义一支画笔
     public int[][] isAvail = new int[column][row];//定义一个二维数组来储存棋盘的落子情况
     public ArrayList<ChessPosition> ChessPositonList = new ArrayList<ChessPosition>();//保存每一步的落子情况
-    public int turn = 0;//等于0时无法下棋
+    public int turn = 0;
     public int ChooseType = 0;//0表示人人对战，1表示人机对战，默认人人对战
 
     public static HashMap<String, Integer> map = new HashMap<String, Integer>();//设置不同落子情况和相应权值的数组
 
     static {
+
         //被堵住
-        map.put("01", 25);//眠1连
-        map.put("02", 22);//眠1连
+        map.put("01", 17);//眠1连
+        map.put("02", 12);//眠1连
         map.put("001", 17);//眠1连
         map.put("002", 12);//眠1连
         map.put("0001", 17);//眠1连
         map.put("0002", 12);//眠1连
 
-        map.put("0102", 25);//眠1连，15
-        map.put("0201", 22);//眠1连，10
+        map.put("0102", 17);//眠1连，15
+        map.put("0201", 12);//眠1连，10
         map.put("0012", 15);//眠1连，15
         map.put("0021", 10);//眠1连，10
-        map.put("01002", 25);//眠1连，15
-        map.put("02001", 22);//眠1连，10
+        map.put("01002", 19);//眠1连，15
+        map.put("02001", 14);//眠1连，10
         map.put("00102", 17);//眠1连，15
         map.put("00201", 12);//眠1连，10
         map.put("00012", 15);//眠1连，15
         map.put("00021", 10);//眠1连，10
 
-        map.put("01000", 25);//活1连，15
-        map.put("02000", 22);//活1连，10
+        map.put("01000", 21);//活1连，15
+        map.put("02000", 16);//活1连，10
         map.put("00100", 19);//活1连，15
         map.put("00200", 14);//活1连，10
         map.put("00010", 17);//活1连，15
@@ -45,29 +45,27 @@ public class Gobangframe extends JPanel implements Gobangconfig {
         map.put("00001", 15);//活1连，15
         map.put("00002", 10);//活1连，10
 
-        //被墙堵住
+        //被堵住
         map.put("0101", 65);//眠2连，40
         map.put("0202", 60);//眠2连，30
-        map.put("0110", 80);//眠2连，40
-        map.put("0220", 76);//眠2连，30
-        map.put("011", 80);//眠2连，40
-        map.put("022", 76);//眠2连，30
+        map.put("0110", 65);//眠2连，40
+        map.put("0220", 60);//眠2连，30
+        map.put("011", 65);//眠2连，40
+        map.put("022", 60);//眠2连，30
         map.put("0011", 65);//眠2连，40
         map.put("0022", 60);//眠2连，30
 
         map.put("01012", 65);//眠2连，40
         map.put("02021", 60);//眠2连，30
-        map.put("01102", 80);//眠2连，40
-        map.put("02201", 76);//眠2连，30
-        map.put("01120", 80);//眠2连，40
-        map.put("02210", 76);//眠2连，30
+        map.put("01102", 65);//眠2连，40
+        map.put("02201", 60);//眠2连，30
         map.put("00112", 65);//眠2连，40
         map.put("00221", 60);//眠2连，30
 
-        map.put("01100", 80);//活2连，40
-        map.put("02200", 76);//活2连，30
         map.put("01010", 75);//活2连，40
         map.put("02020", 70);//活2连，30
+        map.put("01100", 75);//活2连，40
+        map.put("02200", 70);//活2连，30
         map.put("00110", 75);//活2连，40
         map.put("00220", 70);//活2连，30
         map.put("00011", 75);//活2连，40
@@ -80,12 +78,12 @@ public class Gobangframe extends JPanel implements Gobangconfig {
         map.put("01112", 150);//眠3连，100
         map.put("02221", 140);//眠3连，80
 
-        map.put("01110", 1100);//活3连
-        map.put("02220", 1050);//活3连
         map.put("01101", 1000);//活3连，130
         map.put("02202", 800);//活3连，110
         map.put("01011", 1000);//活3连，130
         map.put("02022", 800);//活3连，110
+        map.put("01110", 1000);//活3连
+        map.put("02220", 800);//活3连
 
         map.put("01111", 3000);//4连，300
         map.put("02222", 3500);//4连，280
@@ -103,7 +101,7 @@ public class Gobangframe extends JPanel implements Gobangconfig {
         //初始化一个界面,并设置标题大小等属性
         JFrame jf = new JFrame();
         jf.setTitle("五子棋");
-        jf.setSize(765, 635);
+        jf.setSize(800, 650);
         jf.setLocationRelativeTo(null);
         jf.setDefaultCloseOperation(3);
 
@@ -162,17 +160,38 @@ public class Gobangframe extends JPanel implements Gobangconfig {
         jf.setVisible(true);
     }
 
-    public void PopUp(String top, String result) {
+    public void PopUp(String result) {
         JOptionPane jo = new JOptionPane();
-        jo.showMessageDialog(null, result, top, JOptionPane.PLAIN_MESSAGE);
+        jo.showMessageDialog(null, result, "游戏结果", JOptionPane.PLAIN_MESSAGE);
     }
+
+    //AI联合算法函数
+	/*public Integer unionWeight(Integer a,Integer b ) {
+		//一一
+		if((a>=10)&&(a<=25)&&(b>=10)&&(b<=25)) return 60;
+		//一二、二一
+		else if(((a>=10)&&(a<=25)&&(b>=60)&&(b<=80))||((a>=60)&&(a<=80)&&(b>=10)&&(b<=25))) return 800;
+		//一三、三一、二二
+		else if(((a>=10)&&(a<=25)&&(b>=140)&&(b<=1000))||((a>=140)&&(a<=1000)&&(b>=10)&&(b<=25))||((a>=60)&&(a<=80)&&(b>=60)&&(b<=80)))
+			return 3000;
+		//二三、三二
+		else if(((a>=60)&&(a<=80)&&(b>=140)&&(b<=1000))||((a>=140)&&(a<=1000)&&(b>=60)&&(b<=80))) return 3000;
+		else return 0;
+	}*/
+
 
     //重写重绘方法,这里重写的是第一个大的JPanel的方法
     public void paint(Graphics g) {
         super.paint(g);//画出白框
 
-        Image icon = new ImageIcon("chessboard.jpg").getImage();    //这里不能用ImageIcon
-        g.drawImage(icon, 0, 0, row * size, column * size, null);
+        //重绘出棋盘
+        g.setColor(Color.black);
+        for (int i = 0; i < row; i++) {
+            g.drawLine(x, y + size * i, x + size * (column - 1), y + size * i);
+        }
+        for (int j = 0; j < column; j++) {
+            g.drawLine(x + size * j, y, x + size * j, y + size * (row - 1));
+        }
 
         //重绘出棋子
         for (int i = 0; i < row; i++) {
@@ -180,11 +199,13 @@ public class Gobangframe extends JPanel implements Gobangconfig {
                 if (isAvail[i][j] == 1) {
                     int countx = size * j + 20;
                     int county = size * i + 20;
-                    g.drawImage(blackchess, countx - size / 2, county - size / 2, size, size, null);
+                    g.setColor(Color.black);
+                    g.fillOval(countx - size / 2, county - size / 2, size, size);
                 } else if (isAvail[i][j] == 2) {
                     int countx = size * j + 20;
                     int county = size * i + 20;
-                    g.drawImage(whi_techess, countx - size / 2, county - size / 2, size, size, null);
+                    g.setColor(Color.white);
+                    g.fillOval(countx - size / 2, county - size / 2, size, size);
                 }
             }
         }
