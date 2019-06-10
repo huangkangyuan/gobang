@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class MyJPanel extends JPanel implements Gobangconfig {
+public class MyJPanel extends JPanel implements GobangConfig {
 
 
     public void paint(Graphics g) {

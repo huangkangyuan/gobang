@@ -1,9 +1,9 @@
 package com.hl.v0;
 
 public class User {
-    public String name;
-    public String sex;
-    public int picture;
+    private String name;
+    private String sex;
+    private int picture;
 
     public String getName() {
         return name;

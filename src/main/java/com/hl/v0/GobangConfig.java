@@ -5,7 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 //定义与棋盘数据相关的接口，保存棋盘的起点，格子大小，行数列数等信息
-public interface Gobangconfig {
+public interface GobangConfig {
     int X = 170;
     int Y = 20;
     int SIZE = 50;

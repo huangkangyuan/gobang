@@ -1,15 +1,17 @@
 package com.hl.v0;
 
 
+
+
 import java.awt.*;
 import java.awt.event.MouseListener;
 
 //实现对GoBangframe下棋界面的监听接口处理
-public class FrameListener implements Gobangconfig, MouseListener {
-    public Gobangframe gf;
-    Gobangconfig go;
+public class FrameListener implements GobangConfig, MouseListener {
+    private GobangFrame gf;
+    GobangConfig go;
 
-    public void setGraphics(Gobangframe gf) {
+    public void setGraphics(GobangFrame gf) {
         this.gf = gf;
     }
 
@@ -198,7 +200,6 @@ public class FrameListener implements Gobangconfig, MouseListener {
                 //如果选择的是人机对战
                 else {
                     if (gf.turn == 1) {
-
                         //人先落子
                         //先获取要落的地方
                         g.drawImage(BLACKCHESS, countx - SIZE / 2, county - SIZE / 2, SIZE, SIZE, null);
