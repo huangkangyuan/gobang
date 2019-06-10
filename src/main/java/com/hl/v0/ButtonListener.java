@@ -17,11 +17,12 @@ public class ButtonListener implements Gobangconfig,ActionListener{
         this.box=box;//获取可选框对象
     }
     //当界面发生操作时进行处理
-    public void actionPerformed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent event) {
 
         //必须得用else if，因为如果没有else if你每次在右边的界面点击时它都会获取人人对战或者人机对战的信息，每次都会重置棋盘数组
         //获取当前被点击按钮的内容，判断是不是"开始新游戏"这个按钮
-        if(e.getActionCommand().equals("开始新游戏")) {
+        if(event.getActionCommand().equals("开始新游戏")) {
             //重绘棋盘
             for(int i=0;i<gf.isAvail.length;i++)
                 for(int j=0;j<gf.isAvail[i].length;j++)
@@ -31,7 +32,7 @@ public class ButtonListener implements Gobangconfig,ActionListener{
             gf.turn=1;
         }
         //判断当前点击的按钮是不是悔棋
-        else if(e.getActionCommand().equals("悔棋")) {
+        else if(event.getActionCommand().equals("悔棋")) {
             if((gf.ChessPositonList.size()>1)&&(gf.turn!=0)) {
                 //把棋子数组相应的位置置为0；
                 ChessPosition l=new ChessPosition();
@@ -51,13 +52,13 @@ public class ButtonListener implements Gobangconfig,ActionListener{
                 gf.PopUp("错误提示","不能悔棋!");
             }
         }
-        else if(e.getActionCommand().equals("认输")) {
+        else if(event.getActionCommand().equals("认输")) {
             if(gf.turn==1) gf.PopUp("游戏结果","白方赢");
             else gf.PopUp("游戏结果","黑方赢");
             //重新把棋盘设置为不可操作
             gf.turn=0;
         }
-        else if(e.getActionCommand().equals("进入游戏界面")){
+        else if(event.getActionCommand().equals("进入游戏界面")){
             Gobangframe gf=new Gobangframe();//初始化一个五子棋界面的对象
             gf.initUI();//调用方法进行界面的初始化
             //关闭当前界面

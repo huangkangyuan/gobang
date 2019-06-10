@@ -99,7 +99,7 @@ public class Gobangframe extends JPanel implements Gobangconfig {
         jf.setSize(UIWIDTH, UIHIGHTH);
         jf.setLocationRelativeTo(null);
         jf.setDefaultCloseOperation(3);
-        jf.setLayout(new BorderLayout());//设置顶级容器JFrame为框架布局
+        jf.setLayout(new BorderLayout());//设置顶级容器JFrame为BorderLayout框架布局
 
         //实现左边的界面，把GoBangframe的对象添加到框架布局的中间部分
         //已经有一个GoBangframe对象了，表示当前类的对象是this

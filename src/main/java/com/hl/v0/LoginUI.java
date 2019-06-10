@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 //登录界面
 public class LoginUI extends JFrame implements Gobangconfig{
-	public ArrayList<User> userList=new ArrayList();
+	public ArrayList<User> userList=new ArrayList<>();
 	
 	public void initUI(){
 		this.setTitle("五子棋登录界面");
@@ -23,8 +23,8 @@ public class LoginUI extends JFrame implements Gobangconfig{
 		buttonLogin.setBounds(550,680,dim2.width,dim2.height);
 		this.add(buttonLogin);
 		
-		ButtonListener bu=new ButtonListener(this);
-		buttonLogin.addActionListener(bu);
+		ButtonListener buttonListener=new ButtonListener(this);
+		buttonLogin.addActionListener(buttonListener);
 		
 		this.setVisible(true);
 	}
@@ -35,7 +35,7 @@ public class LoginUI extends JFrame implements Gobangconfig{
 		g.drawImage(LOGINPICTURE, 0, 0,this.getWidth(), this.getHeight(), this);
 	}
 	//主函数入口
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		LoginUI ui=new LoginUI();
 		ui.initUI();
 	}

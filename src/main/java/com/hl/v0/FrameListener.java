@@ -1,6 +1,5 @@
 package com.hl.v0;
 
-import com.hl.Gobangconfig;
 
 import java.awt.*;
 import java.awt.event.MouseListener;

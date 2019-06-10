@@ -1,9 +1,11 @@
-//package com.hl;
+//package com.hl.v0;
+//
+//import com.hl.v0.Gobangconfig;
 //
 //import javax.swing.*;
 //import java.awt.*;
 //
-//public class Chessboard extends JPanel implements Gobangconfig{
+//public class Chessboard extends JPanel implements Gobangconfig {
 //
 //    private Gobangframe goBangframe = new Gobangframe();
 //
