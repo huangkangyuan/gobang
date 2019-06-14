@@ -12,7 +12,7 @@ public interface GobangConfig {
     int ROW = 15;
     int COLUMN = 15;
     int UIWIDTH = 1265;
-    int UIHIGHTH = 785;
+    int UIHIGHTH = 800;
     int MESSAGEWIDTH = 240;//设置右边信息栏的宽度
     Image BLACKCHESS = new ImageIcon("pic\\black.png").getImage();    //这里不能用ImageIcon
     Image WHITECHESS = new ImageIcon("pic\\white.png").getImage();    //这里不能用ImageIcon

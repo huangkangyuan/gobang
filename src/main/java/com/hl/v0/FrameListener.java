@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 //实现对GoBangframe下棋界面的监听接口处理
 public class FrameListener implements GobangConfig, MouseListener {
     private GobangFrame gf;
-    GobangConfig go;
+    private GobangConfig go;
 
     public void setGraphics(GobangFrame gf) {
         this.gf = gf;

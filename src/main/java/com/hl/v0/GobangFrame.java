@@ -111,7 +111,7 @@ public class GobangFrame extends JPanel implements GobangConfig {
         //实现右边的JPanel容器界面
         JPanel jPanel = new JPanel();
         jPanel.setPreferredSize(dim1);//设置JPanel的大小
-        jPanel.setBackground(Color.LIGHT_GRAY);//设置右边的界面颜色为白色
+        jPanel.setBackground(Color.LIGHT_GRAY);//设置右边的界面颜色为灰色
         jFrame.add(jPanel, BorderLayout.EAST);//添加到框架布局的东边部分
         jPanel.setLayout(new FlowLayout());//设置JPanel为流式布局
 
@@ -122,7 +122,7 @@ public class GobangFrame extends JPanel implements GobangConfig {
         //设置背景图片的大小
         USERPICTURE.setImage(USERPICTURE.getImage().getScaledInstance(dim3.width, dim3.height, Image.SCALE_DEFAULT));
         user[0] = new JLabel(USERPICTURE);
-        user[0].setPreferredSize(dim3);
+        user[0].setPreferredSize(dim3); //设置此组件的首选大小
         jPanel.add(user[0]);
 
         for (int i = 1; i < 4; i++) {
@@ -153,28 +153,28 @@ public class GobangFrame extends JPanel implements GobangConfig {
         }
 
         //设置选项按钮
-
         ImageIcon[] pic = {BATTLEBUTTON1, BATTLEBUTTON2};
         //String[] boxname= {"人人对战","人机对战"};
-        JComboBox<ImageIcon> box = new JComboBox<>(pic);
-        box.setPreferredSize(dim4);
+        JComboBox<ImageIcon> jComboBox = new JComboBox<>(pic);
+        jComboBox.setPreferredSize(dim4);
         pic[0].setImage(pic[0].getImage().getScaledInstance(dim4.width, dim4.height, Image.SCALE_DEFAULT));
         pic[1].setImage(pic[1].getImage().getScaledInstance(dim4.width, dim4.height, Image.SCALE_DEFAULT));
-        jPanel.add(box);
+        jPanel.add(jComboBox);
 
         //按钮监控类
-        ButtonListener butListen = new ButtonListener(this, box);
+        ButtonListener butListen = new ButtonListener(this, jComboBox);
         //对每一个按钮都添加状态事件的监听处理机制
         for (int i = 0; i < butname.length; i++) {
+            //开始新游戏,悔棋,认输
             button[i].addActionListener(butListen);//添加发生操作的监听方法
         }
 
         //对可选框添加事件监听机制
-        box.addActionListener(butListen);
+        jComboBox.addActionListener(butListen);
 
-        FrameListener fl = new FrameListener();
-        fl.setGraphics(this);//获取画笔对象
-        this.addMouseListener(fl);
+        FrameListener frameListener = new FrameListener();
+        frameListener.setGraphics(this);//获取画笔对象
+        this.addMouseListener(frameListener);
 
         jFrame.setVisible(true);
     }
