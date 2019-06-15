@@ -136,18 +136,17 @@ public class GobangFrame extends JPanel implements GobangConfig {
             jPanel.add(user[i]);
         }
 
-
         //接下来我们需要把按钮等组件依次加到那个JPanel上面
         //设置按钮数组
         //String[] butname= {"","",""};
-        String[] butname = {"开始新游戏", "悔棋", "认输"};
+        String[] butName = {"开始新游戏", "悔棋", "认输"};
         ImageIcon[] BackgroundPicture = {STARTBUTTON, BACKBUTTON, LOSEBUTTON};
         JButton[] button = new JButton[3];
 
         //依次把三个按钮组件加上去
-        for (int i = 0; i < butname.length; i++) {
+        for (int i = 0; i < butName.length; i++) {
             BackgroundPicture[i].setImage(BackgroundPicture[i].getImage().getScaledInstance(dim4.width + 20, dim4.height, Image.SCALE_DEFAULT));
-            button[i] = new JButton(butname[i], BackgroundPicture[i]);
+            button[i] = new JButton(butName[i], BackgroundPicture[i]);
             button[i].setPreferredSize(dim4);
             jPanel.add(button[i]);
         }
@@ -164,7 +163,7 @@ public class GobangFrame extends JPanel implements GobangConfig {
         //按钮监控类
         ButtonListener butListen = new ButtonListener(this, jComboBox);
         //对每一个按钮都添加状态事件的监听处理机制
-        for (int i = 0; i < butname.length; i++) {
+        for (int i = 0; i < butName.length; i++) {
             //开始新游戏,悔棋,认输
             button[i].addActionListener(butListen);//添加发生操作的监听方法
         }
@@ -214,5 +213,4 @@ public class GobangFrame extends JPanel implements GobangConfig {
             }
         }
     }
-
 }

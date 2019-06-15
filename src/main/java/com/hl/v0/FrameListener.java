@@ -36,6 +36,7 @@ public class FrameListener implements GobangConfig, MouseListener {
         else return 0;
     }
 
+    @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
         int x = e.getX();
         int y = e.getY();

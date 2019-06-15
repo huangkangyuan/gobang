@@ -18,7 +18,7 @@ public interface GobangConfig {
     Image WHITECHESS = new ImageIcon("pic\\white.png").getImage();    //这里不能用ImageIcon
     Image CHESSBOARD = new ImageIcon("pic\\ChessBoard.jpg").getImage();    //这里不能用ImageIcon
     Image MESSAGEPICTURE = new ImageIcon("pic\\MessagePictrue.jpg").getImage();    //这里不能用ImageIcon
-    Image LOGINPICTURE = new ImageIcon("pic\\LoginPicture.jpg").getImage();    //这里不能用ImageIcon
+    Image LOGINPICTURE = new ImageIcon("pic\\LoginPicture3.jpg").getImage();    //这里不能用ImageIcon
     Image LOGINPICTURE2 = new ImageIcon("pic\\LoginPicture2.jpg").getImage();    //这里不能用ImageIcon
     ImageIcon LOGINBUTTON = new ImageIcon("pic\\LoginButton.png");
     ImageIcon STARTBUTTON = new ImageIcon("pic\\StartButton.png");
